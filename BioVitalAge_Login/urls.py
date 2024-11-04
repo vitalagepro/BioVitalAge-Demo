@@ -9,4 +9,5 @@ urlpatterns = [
     path("", views.MainPageView.as_view(), name="main-page"),
     path('HomePage', views.HomePageView.as_view(), name='home_page'),
     path('Calcolatore', views.CalcolatoreView.as_view(), name='calcolatore'),
+    path('Risultati', views.RisultatiView.as_view(), name='risultati'),
 ]

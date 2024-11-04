@@ -115,3 +115,14 @@ form{
     border-radius: 8px;
     border: none;
 }
+.button-container a{
+    border-radius: 8px;
+    border: 2px solid var(--contrast-color2);
+    color: var(--tittle1);
+    height: 2.5rem;
+    padding: 5px;
+    text-decoration: none;
+    width: 12rem;
+    text-align: center;
+    font-size: 18px;
+}

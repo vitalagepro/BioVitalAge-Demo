@@ -36,6 +36,15 @@ class CalcolatoreView(View):
     def post(self, request):
 
         print(request.POST)
-        #Qui vanno i calcoli per calcolare l'età biologica e salvarli all'interno del database
+        #Qui vanno i calcoli per calcolare l'età biologica e salvarli all'interno del database 
 
         return render(request, "includes/calcolatore.html")
+
+
+class RisultatiView(View):
+    def get(self, request):
+        return render(request, "includes/risultati.html")
+
+    def post(self, request):
+
+        return render(request, "includes/risultati.html")
