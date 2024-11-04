@@ -2,16 +2,13 @@ from django.shortcuts import render
 from django.views import View
 
 
-
 class MainPageView(View):
     
     def get(self, request):
         return render(request, "includes/index.html")
 
     def post(self, request):
-        
         return print('working in progress')
-    
 
 
 class HomePageView(View):
@@ -29,3 +26,12 @@ class HomePageView(View):
             "username": username,
             "message": "Login tentativo eseguito"
         })
+
+
+
+class CalcolatoreView(View):
+    def get(self, request):
+        return render(request, "includes/calcolatore.html")
+
+    def post(self, request):
+        return print('working in progress')

@@ -167,7 +167,7 @@ main{
     position: absolute;
     top: 4.5rem;
     width: 100%;
-    height: 100%;
+    height: 850px;
     background: linear-gradient(to right, var(--dark2), var(--contrast-color), var(--dark2));
 }
 .main-title-nav{
@@ -666,14 +666,13 @@ main{
 /* Footer style */
 footer{
     width: 100%;
-    height: 3rem;
-    background-color: whitesmoke;
+    height: 4rem;
+    background-color: var(--dark1);
     position: absolute;
-    bottom: -1rem;
+    bottom: 0rem;
     left: 0;
 }
 footer p{
-    color: var(--title-color-dark);
-    width: 96%;
-    margin: 16px auto;
+    color: var(--tittle1);
+    padding: 20px;
 }
