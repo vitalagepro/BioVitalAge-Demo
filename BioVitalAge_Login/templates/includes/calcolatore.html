@@ -49,6 +49,41 @@
     </header>
 
     <main>
+
+        <div id="myModal" class="modal">
+            <div class="modal-container">
+                <h3>Risultato Calcolo età Biologica</h3>
+                <p>La tua età biologica è: <span>{{ biological_age }}</span></p>
+
+                <p class="Subtitle">Dati Inseriti</p>
+                <div class="valoriInseritiContainer">
+                  
+                    {% for key, value in data.items %}
+                        <p><span>{{ key }}:</span> {{ value }}</p>
+                    {% endfor %}
+                </div>
+
+
+                <button onclick="closeModal()">Chiudi</button>
+            </div>
+
+        </div>
+
+        <!-- Gestione Modal -->
+        <script>
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+            }
+
+            // Mostra la modale se show_modal è True
+            const modal = document.getElementById("myModal");
+            if (modal) {
+                {% if show_modal %} // @ts-ignore
+                modal.style.display = "flex";
+                {% endif %}  // @ts-ignore
+            } // @ts-ignore
+        </script>
+
         <div class="main-title-nav">
             <h2 class="main-welcome-title">Calcola la tua età biologica, Demo User</h2>
             <div class="main-menu-trace">
@@ -176,9 +211,9 @@
                 </div>
 
                 <div class="col-md-6 PatientInfoContainer" id="SecondoContainerPatient">
-                    <h3>Blood Test Results</h3>
+                    <h3>Red Blood Cells</h3>
 
-                    <div class="col-md-12 d-flex containerInput" style="padding: 18px;">
+                    <div class="col-md-12 d-flex containerInput" style="padding: 16px;">
 
                         <div class="col-md-4 p-3  form-group">
                             <label for="rbc">Red Blood Cells (RBC)</label>
@@ -200,7 +235,7 @@
                             <label for="mchc">Mean Corpuscular Hemoglobin Concentration (MCHC)</label>
                             <input type="number" step="0.1" id="mchc" name="mchc" required placeholder="numeric value only">
                         </div>
-                        <div class="col-md-4 p-3 form-group">
+                        <div class="col-md-4 p-3 form-group" style="margin-top: 1.5rem;">
                             <label for="mcv">Mean Corpuscular Volume (MCV)</label>
                             <input type="number" step="0.1" id="mcv" name="mcv" required placeholder="numeric value only">
                     </div>

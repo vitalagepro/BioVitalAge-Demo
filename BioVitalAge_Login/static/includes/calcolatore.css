@@ -126,3 +126,52 @@ form{
     text-align: center;
     font-size: 18px;
 }
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-container {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    height: 550px;
+}
+.modal-container h3{
+    color: var(--contrast-color);
+}
+.modal-container p{
+    font-size: 18px;
+}
+.modal-container p span{
+    color: var(--contrast-color2);
+    font-weight: bold;
+}
+
+.Subtitle{
+    font-weight: bold;
+}
+.valoriInseritiContainer{
+    background-color: var(--contrast-color-shadow);
+    max-height: 300px;
+    overflow: auto;
+    padding: 20px;
+}
+
+.modal-container button{
+    margin-top: 2rem;
+    height: 2.5rem;
+    width: 12rem;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: var(--contrast-color2);
+    border: none;
+    color: var(--tittle1);
+}
