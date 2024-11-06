@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 from .utils import calculate_biological_age 
+from .models import Persona 
+from django.shortcuts import get_object_or_404
 
 
 class MainPageView(View):
@@ -36,7 +38,6 @@ class CalcolatoreView(View):
     def post(self, request):
 
         data = {key: value for key, value in request.POST.items() if key != 'csrfmiddlewaretoken'}
-
         chronological_age = int(data.get('chronological_age'))
         obri_index = float(data.get('obri_index'))
         d_roms = float(data.get('d_roms'))
@@ -69,6 +70,8 @@ class CalcolatoreView(View):
                 pat,
                 exams
         )
+        data['biological_age'] = biological_age
+        Persona.objects.create(**data)
 
         context = {
             "show_modal": True,
@@ -79,13 +82,19 @@ class CalcolatoreView(View):
         return render(request, "includes/calcolatore.html", context)
 
 
+
 class RisultatiView(View):
-    def get(self, request):
-        return render(request, "includes/risultati.html")
+     def get(self, request):
+        # Recupera tutte le istanze di Persona
+        persone = Persona.objects.all()
+        return render(request, "includes/risultati.html", {"persone": persone})
 
-    def post(self, request):
-
+     def post(self, request):
+        # Filtro opzionale in base all'input dell'utente
         inputData = request.POST.get('inputField')
-        print(inputData)
-
-        return render(request, "includes/risultati.html")
+        persone = Persona.objects.filter(name__icontains=inputData) if inputData else Persona.objects.all()
+        return render(request, "includes/risultati.html", {"persone": persone})
+class PersonaDetailView(View):
+    def get(self, request, id):
+        persona = get_object_or_404(Persona, id=id)
+        return render(request, "includes/persona_detail.html", {"persona": persona})

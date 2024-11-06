@@ -1,26 +1,18 @@
-
-:root{
+:root {
     --dark1: #0c042c; 
     --dark2: #0c214b; 
     --light1: #c3ccd4; 
-
     --neutral-gray: #b0b8c1;
     --neutral-bg-color: rgba(176, 184, 193, 0.2);
-    --neutral-bg-color-contrast: rgba(124, 81, 149, 0.2); 
-    
     --contrast-color: #3a255d;
     --contrast-color-shadow: #3b255d2c; 
     --contrast-color2: #6a2dcc; 
     --positive-color: #2ac670; 
-            
     --tittle1: whitesmoke; 
-    --tittle2: #2ac4dd; 
-
     --circle-color-shadow: rgba(42, 196, 221,0.15);
-    --circle-color-shadow-two: rgba(42, 196, 221,0.05)
 }
 
-.barra-ricerca{
+.barra-ricerca {
     background-color: var(--tittle1);
     height: 4rem;
     border-radius: 8px;
@@ -30,7 +22,8 @@
     justify-content: center;
     align-items: center;
 }
-form input{
+
+form input {
     border: 1px solid lightgrey;
     border-radius: 8px;
     border-bottom: 2px solid var(--contrast-color2);
@@ -41,7 +34,8 @@ form input{
     background-color: var(--tittle1);
     outline: none;
 }
-form button{
+
+form button {
     height: 3rem;
     font-size: 18px;
     background-color: var(--contrast-color2);
@@ -50,18 +44,23 @@ form button{
     border: none;
     border-radius: 8px;
 }
-.risultati-ricerca{
+
+.risultati-ricerca {
     width: 98%;
     margin: auto;
     background-color: var(--tittle1);
     border-radius: 8px;
 }
-.table-placeholder{
+
+.table-placeholder {
     background-color: var(--contrast-color-shadow);
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
 }
-.cella{
-    width: 100%;
-    padding-top: 10px;
+
+.cella {
+    flex: 1; /* Cambiato per distribuire lo spazio in modo uniforme */
+    padding: 10px;
     font-size: 18px;
     font-weight: bold;
     color: var(--contrast-color);
@@ -70,23 +69,30 @@ form button{
     justify-content: center;
     align-items: center;
 }
-.riga{
+
+.riga {
     height: 6rem;
+    border-bottom: 1px solid lightgrey; /* Aggiunto bordo per separare le righe */
 }
-.cella button{
+
+.riga:hover {
+    background-color: var(--neutral-bg-color); /* Cambia colore al passaggio del mouse */
+}
+
+.cella button {
     background-color: var(--contrast-color2);
     color: var(--tittle1);
     border-radius: 8px;
     border: none;
     width: 10rem;
     height: 2.5rem;
-    margin-top: -1rem;
 }
 
-.content-table{
+.content-table {
     overflow: auto;
     max-height: 500px;
 }
+
 .content-table::-webkit-scrollbar {
     width: 10px;
     border-radius: 8px;
