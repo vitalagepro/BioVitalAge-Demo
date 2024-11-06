@@ -29,7 +29,6 @@ class HomePageView(View):
         })
 
 
-
 class CalcolatoreView(View):
     def get(self, request):
         return render(request, "includes/calcolatore.html")
@@ -85,5 +84,8 @@ class RisultatiView(View):
         return render(request, "includes/risultati.html")
 
     def post(self, request):
+
+        inputData = request.POST.get('inputField')
+        print(inputData)
 
         return render(request, "includes/risultati.html")
