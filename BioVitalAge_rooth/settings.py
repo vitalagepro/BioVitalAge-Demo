@@ -75,16 +75,41 @@ WSGI_APPLICATION = 'BioVitalAge_rooth.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'mysql.connector.django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': 'LoginRegister',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'PASSWORD': 'bGqAUCGjQvSDTCdRXGlZOjVtiyPgepKz',
+        'HOST': 'junction.proxy.rlwy.net',
+        'PORT': '28552',
+        'OPTIONS': {
+            'ssl_verify_cert': False
+        },
+        'ATOMIC_REQUESTS': True,  # Assicura che ogni richiesta sia una transazione
     }
 }
+
+
+
 
 
 # Password validation
